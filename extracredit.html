@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Shadow Button Example</title>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+    <script src="extracredit.jsx">import ShadowButton from './ShadowButton';</script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function ShadowButton() {
+        const [counter, setCounter] = React.useState(0);
+
+        const handleClick = () => {
+          setCounter(counter + 1);
+        };
+
+        return (
+          <span className="wrapper">
+            <button onClick={handleClick}>Times Clicked: {counter}</button>
+          </span>
+        );
+      }
+
+      ReactDOM.render(<ShadowButton />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
